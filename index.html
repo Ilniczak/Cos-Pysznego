@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <!-- ======= SEO & META ======= -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coś Pysznego | Desery z widokiem na Miedwie</title>
+  <meta name="description" content="Deserownia „Coś Pysznego” nad jeziorem Miedwie. Lody rzemieślnicze, gofry, kawa. Obok plaża, amfiteatr i wypożyczalnia SUP-ów. Zamki dmuchane dla dzieci. Sprawdź menu i wydarzenia." />
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%232E8BC0"/><circle cx="50" cy="50" r="36" fill="%23F25C54"/></svg>' />
+  <meta property="og:title" content="Coś Pysznego — desery z widokiem na Miedwie" />
+  <meta property="og:description" content="Lody, gofry i kawa tuż przy plaży i amfiteatrze. Zamki dmuchane dla dzieci, wydarzenia sezonowe. Zapraszamy!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://placehold.co/1200x630/png?text=Co%C5%9B+Pysznego" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- ======= Fonts ======= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <!-- ======= JSON-LD LocalBusiness ======= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Coś Pysznego",
+    "image": "https://placehold.co/1200x630/png?text=Co%C5%9B+Pysznego",
+    "telephone": "+48 608 409 385",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "okolice amfiteatru nad Miedwiem",
+      "addressLocality": "Kobylanka",
+      "addressRegion": "Zachodniopomorskie",
+      "postalCode": "73-108",
+      "addressCountry": "PL"
+    },
+    "url": "https://example.com"
+  }
+  </script>
+  <!-- ======= Styles ======= -->
+  <style>
+    :root{
+      --primary:#2E8BC0;
+      --secondary:#86BBD8;
+      --accent:#F25C54;
+      --sand:#F5E6C4;
+      --ink:#0F172A;
+      --bg:#FFFFFF;
+      --radius:16px;
+      --shadow:0 8px 30px rgba(15,23,42,.08);
+      --focus: 0 0 0 3px rgba(46,139,192,.4);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.6;
+    }
+    h1,h2,h3{font-family:Poppins,Inter,system-ui; margin:0 0 .5rem}
+    h1{font-size:clamp(2rem,4vw,3rem); line-height:1.1}
+    h2{font-size:clamp(1.4rem,2.6vw,2rem)}
+    p{margin:.25rem 0 1rem}
+
+    /* Layout */
+    .container{max-width:1100px; margin:0 auto; padding:0 16px}
+    .section{padding:64px 0}
+    .muted{color:#475569}
+    .btn{
+      display:inline-flex; align-items:center; gap:.5rem;
+      padding:.8rem 1.1rem; border-radius:999px; border:2px solid transparent;
+      background:var(--primary); color:white; font-weight:600; text-decoration:none;
+      box-shadow:var(--shadow);
+    }
+    .btn:hover{filter:brightness(1.05); transform:translateY(-1px)}
+    .btn:focus-visible{outline:none; box-shadow:var(--focus)}
+    .btn.secondary{background:var(--accent)}
+    .btn.ghost{background:transparent; color:var(--primary); border-color:var(--primary)}
+    .chip{display:inline-block;padding:.25rem .6rem; border-radius:999px; font-size:.8rem; font-weight:600}
+    .chip.open{background:#16a34a20; color:#166534; border:1px solid #16a34a55}
+    .chip.closed{background:#b91c1c18; color:#7f1d1d; border:1px solid #b91c1c55}
+
+    /* Skip link */
+    .skip{position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden}
+    .skip:focus{left:16px; top:16px; z-index:999; width:auto; height:auto; background:#fff; padding:.6rem 1rem; border-radius:999px; box-shadow:var(--shadow)}
+
+    /* Navbar */
+    header{
+      position:sticky; top:0; z-index:50; background:rgba(255,255,255,.9); backdrop-filter:saturate(180%) blur(8px); border-bottom:1px solid #e5e7eb;
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; height:64px;
+    }
+    .brand{display:flex; align-items:center; gap:.6rem; text-decoration:none; color:var(--ink)}
+    .logo{
+      width:34px; height:34px; border-radius:10px; display:grid; place-items:center; background:var(--primary); color:#fff; font-weight:800;
+      box-shadow:0 2px 8px rgba(46,139,192,.35);
+    }
+    nav ul{display:flex; gap:1rem; list-style:none; margin:0; padding:0}
+    nav a{color:#0f172a; text-decoration:none; font-weight:600; padding:.4rem .6rem; border-radius:8px}
+    nav a:focus-visible{outline:none; box-shadow:var(--focus)}
+    nav a:hover{background:#f1f5f9}
+    .nav-cta{display:flex; gap:.6rem; align-items:center}
+
+    /* Hero */
+    .hero{
+      position:relative; overflow:hidden; background:
+        radial-gradient(1200px 600px at 80% -10%, #86BBD855, transparent 60%),
+        radial-gradient(600px 400px at -10% 10%, #2E8BC020, transparent 60%),
+        linear-gradient(180deg, #ffffff, #ffffff);
+      border-bottom:1px solid #e5e7eb;
+    }
+    .hero-wrap{display:grid; grid-template-columns:1.2fr .8fr; gap:32px; align-items:center; padding:64px 0}
+    .hero .tag{display:inline-block; background:var(--sand); color:#6b7280; padding:.35rem .7rem; border-radius:999px; font-weight:600; font-size:.85rem}
+    .hero-img{
+      width:100%; height:360px; border-radius:var(--radius); background:
+        url('https://placehold.co/800x600/png?text=Jezioro+Miedwie') center/cover no-repeat;
+      box-shadow:var(--shadow); border:1px solid #e5e7eb;
+    }
+    .hero-actions{display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1rem}
+
+    /* Cards grid */
+    .grid{display:grid; gap:16px}
+    .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media (max-width:960px){ .hero-wrap{grid-template-columns:1fr} .grid.cols-3{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:640px){ .grid.cols-3,.grid.cols-2{grid-template-columns:1fr} }
+
+    .card{
+      background:#fff; border:1px solid #e5e7eb; border-radius:var(--radius); padding:16px; box-shadow:var(--shadow)
+    }
+    .card:hover{transform:translateY(-1px)}
+    .icon{width:22px; height:22px}
+
+    /* Menu table + filters */
+    .filters{display:flex; gap:.5rem; flex-wrap:wrap; margin:8px 0 16px}
+    .filter-btn{
+      padding:.5rem .8rem; border-radius:999px; border:1.5px solid #cbd5e1; background:#fff; font-weight:600; cursor:pointer
+    }
+    .filter-btn[aria-pressed="true"]{background:var(--primary); color:#fff; border-color:var(--primary)}
+    .menu-table{width:100%; border-collapse:separate; border-spacing:0 8px}
+    .menu-table th{font-size:.9rem; text-align:left; color:#475569}
+    .menu-table td, .menu-table th{padding:10px 12px}
+    .menu-row{background:#f8fafc; border:1px solid #e5e7eb}
+    .menu-row:hover{background:#eef6fb}
+
+    /* Weather */
+    .weather{display:grid; grid-template-columns:1fr auto; gap:16px; align-items:center}
+    .weather-stats{display:flex; gap:10px; flex-wrap:wrap}
+    .stat{background:#f1f5f9; padding:.6rem .8rem; border-radius:10px; font-weight:600; min-width:140px}
+    .status-tag{justify-self:end}
+
+    /* Events */
+    .events{display:grid; gap:12px}
+    .event{display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between; border:1px solid #e5e7eb; border-radius:12px; padding:12px}
+    .event .date{font-weight:700}
+
+    /* Contact & Forms */
+    form{display:grid; gap:12px}
+    .row{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    @media (max-width:640px){ .row{grid-template-columns:1fr} }
+    input, select, textarea{
+      width:100%; padding:.8rem .9rem; border-radius:12px; border:1.5px solid #cbd5e1; font:inherit; background:#fff
+    }
+    textarea{min-height:120px; resize:vertical}
+    input:focus,select:focus,textarea:focus{outline:none; box-shadow:var(--focus); border-color:var(--primary)}
+    .helper{font-size:.85rem; color:#64748b}
+    .inline{display:flex; align-items:center; gap:.5rem}
+    .inline input[type="checkbox"]{width:auto}
+
+    /* Footer */
+    footer{background:#0b1224; color:#e2e8f0; padding:32px 0; margin-top:40px}
+    footer a{color:#e2e8f0}
+    .footer-grid{display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center}
+    @media (max-width:720px){ .footer-grid{grid-template-columns:1fr} }
+
+    /* Accessibility */
+    :focus-visible{outline:none; box-shadow:var(--focus)}
+    @media (prefers-reduced-motion: reduce){
+      *{transition:none !important; animation:none !important}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Przejdź do treści</a>
+
+  <!-- ======= Header / Navbar ======= -->
+  <header role="banner" aria-label="Główna nawigacja">
+    <div class="container nav">
+      <a class="brand" href="#" aria-label="Strona główna Coś Pysznego">
+        <span class="logo" aria-hidden="true">CP</span>
+        <strong>Coś Pysznego</strong>
+      </a>
+      <nav aria-label="Nawigacja główna">
+        <ul>
+          <li><a href="#lokalizacja">Lokalizacja</a></li>
+          <li><a href="#atrakcje">Atrakcje</a></li>
+          <li><a href="#menu">Menu &amp; Cennik</a></li>
+          <li><a href="#pogoda">Pogoda</a></li>
+          <li><a href="#wydarzenia">Wydarzenia</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn ghost" href="zamki.html" aria-label="Przejdź do strony wynajmu zamków dmuchanych">Wynajem Zamków</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ======= Hero ======= -->
+    <section class="hero" aria-label="Zaproszenie">
+      <div class="container hero-wrap">
+        <div>
+          <span class="tag">Desery z widokiem na Miedwie</span>
+          <h1>Przyjdź na lody, zostań dla widoku.</h1>
+          <p class="muted">Tuż przy plaży i kultowym amfiteatrze. Dzieci bawią się na naszych dmuchanych zamkach, a Ty spokojnie pijesz kawę.</p>
+          <div class="hero-actions" role="group" aria-label="Przyciski akcji">
+            <a class="btn" href="#menu">Sprawdź menu</a>
+            <a class="btn secondary" href="zamki.html">Wynajmij zamek dmuchany</a>
+          </div>
+        </div>
+        <div class="hero-img" role="img" aria-label="Widok jeziora Miedwie i plaży"></div>
+      </div>
+    </section>
+
+    <!-- ======= Lokalizacja ======= -->
+    <section id="lokalizacja" class="section" aria-labelledby="lokalizacja-h">
+      <div class="container">
+        <h2 id="lokalizacja-h">Dlaczego to miejsce jest świetne</h2>
+        <p>Jesteśmy nad samym jeziorem Miedwie — krok od plaży i amfiteatru, który od lat jest symbolem regionu. Woda jest czysta, latem idealna do pływania. Tuż obok działa wypożyczalnia sprzętu wodnego: SUP-y, rowerki wodne i kajaki.</p>
+        <div class="grid cols-3" role="list">
+          <div class="card" role="listitem">
+            <h3>Wypożyczalnia obok</h3>
+            <p class="muted">SUP-y, rowerki, kajaki — po deserze wskakujesz do wody.</p>
+          </div>
+          <div class="card" role="listitem">
+            <h3>Plaża i amfiteatr</h3>
+            <p class="muted">Spotkania, koncerty i duża, zadbana plaża w zasięgu wzroku.</p>
+          </div>
+          <div class="card" role="listitem">
+            <h3>Łatwy dojazd</h3>
+            <p class="muted">Parking przy promenadzie. Do nas dojdziesz w 2–3 minuty spacerem.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Atrakcje rodzinne ======= -->
+    <section id="atrakcje" class="section" aria-labelledby="atrakcje-h">
+      <div class="container">
+        <h2 id="atrakcje-h">Atrakcje dla rodzin</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3>Nasze zamki dmuchane</h3>
+            <p class="muted">Dzieci skaczą i śmieją się w najlepsze, a Ty masz czas na kawę i coś słodkiego. Bezpieczne, regularnie przeglądane, obsługiwane przez nasz zespół.</p>
+            <a class="btn" href="zamki.html" aria-label="Przejdź do strony z zamkami dmuchanymi">Zobacz katalog zamków</a>
+          </div>
+          <div class="card" aria-label="Zdjęcie przykładowego zamku dmuchanego">
+            <img src="https://placehold.co/800x500/png?text=Zamek+dmuchany" width="800" height="500" alt="Zamek dmuchany na tle jeziora" loading="lazy" style="width:100%;height:auto;border-radius:12px;border:1px solid #e5e7eb"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Menu & Cennik ======= -->
+    <section id="menu" class="section" aria-labelledby="menu-h">
+      <div class="container">
+        <h2 id="menu-h">Menu &amp; Cennik</h2>
+        <p class="muted">Menu bywa sezonowe — ceny i smaki mogą się zmieniać. Sprawdź, co serwujemy dziś.</p>
+
+        <div class="filters" role="toolbar" aria-label="Filtr kategorii">
+          <button class="filter-btn" data-filter="all" aria-pressed="true">Wszystko</button>
+          <button class="filter-btn" data-filter="Lody">Lody</button>
+          <button class="filter-btn" data-filter="Gofry">Gofry</button>
+          <button class="filter-btn" data-filter="Kawa">Kawa</button>
+          <button class="filter-btn" data-filter="Napoje">Napoje</button>
+        </div>
+
+        <div class="card" role="region" aria-label="Tabela menu">
+          <table class="menu-table" aria-describedby="menu-note">
+            <thead>
+              <tr>
+                <th scope="col">Pozycja</th>
+                <th scope="col">Kategoria</th>
+                <th scope="col">Opis</th>
+                <th scope="col">Cena</th>
+              </tr>
+            </thead>
+            <tbody id="menuBody">
+              <!-- rows injected by JS for clarity & easy filtering -->
+            </tbody>
+          </table>
+          <p id="menu-note" class="helper">* Ceny w PLN. Zapytaj o alergeny przy ladzie.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Pogoda + Status ======= -->
+    <section id="pogoda" class="section" aria-labelledby="pogoda-h">
+      <div class="container">
+        <h2 id="pogoda-h">Pogoda i status otwarcia</h2>
+        <div class="card weather" role="region" aria-live="polite">
+          <div>
+            <div class="weather-stats">
+              <div class="stat" id="stat-precip">Pada: —</div>
+              <div class="stat" id="stat-temp">Temp: —</div>
+              <div class="stat" id="stat-feels">Odczuwalna: —</div>
+            </div>
+            <p id="weather-note" class="helper" aria-live="polite">Aktualizacja: —</p>
+          </div>
+          <div class="status-tag">
+            <span id="openTag" class="chip closed">ZAMKNIĘTE</span>
+            <p class="helper" id="hoursText" style="margin-top:.4rem; text-align:right">Godziny: 10:00–20:00</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Wydarzenia ======= -->
+    <section id="wydarzenia" class="section" aria-labelledby="wydarzenia-h">
+      <div class="container">
+        <h2 id="wydarzenia-h">Nadchodzące wydarzenia</h2>
+        <div class="events" role="list">
+          <div class="event" role="listitem">
+            <div>
+              <div class="date">14 września</div>
+              <strong>Wieczór nad wodą: gofry &amp; muzyka</strong>
+              <p class="muted">Spokojny set przy zachodzie słońca. Dla rodzin i znajomych.</p>
+            </div>
+            <a class="btn" href="#kontakt" aria-label="Zapisz się na wydarzenie 14 września">Zapisz się</a>
+          </div>
+          <div class="event" role="listitem">
+            <div>
+              <div class="date">28 września</div>
+              <strong>Rodzinne niedziele z dmuchańcami</strong>
+              <p class="muted">Zabawa dla dzieci na zamkach + zniżki na lody.</p>
+            </div>
+            <a class="btn" href="#kontakt" aria-label="Zapisz się na wydarzenie 28 września">Szczegóły</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Kontakt ======= -->
+    <section id="kontakt" class="section" aria-labelledby="kontakt-h">
+      <div class="container">
+        <h2 id="kontakt-h">Kontakt</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3>Napisz lub zadzwoń</h3>
+            <p class="muted inline" aria-label="Telefon">
+              <!-- phone icon -->
+              <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.61a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.47-1.06a2 2 0 0 1 2.11-.45c.84.27 1.71.45 2.61.57A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/></svg>
+              <a href="tel:+48608409385">608 409 385</a>
+            </p>
+            <p class="muted inline" aria-label="Email">
+              <!-- mail icon -->
+              <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="2"/><path d="m22 6-10 7L2 6" stroke="currentColor" stroke-width="2"/></svg>
+              <a href="mailto:kontakt@cospysznego.pl">kontakt@cospysznego.pl</a>
+            </p>
+            <p class="muted inline" aria-label="Adres">
+              <!-- location icon -->
+              <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s8-4.5 8-12a8 8 0 1 0-16 0c0 7.5 8 12 8 12z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+              Miedwie – okolice amfiteatru
+            </p>
+            <p class="helper">Aby dopytać o dostępność i cenę zamków: zadzwoń <strong>608 409 385</strong>.</p>
+          </div>
+          <div class="card" role="form" aria-label="Formularz kontaktowy">
+            <form action="#" method="post" novalidate>
+              <div class="row">
+                <div>
+                  <label for="name">Imię i nazwisko</label>
+                  <input id="name" name="name" type="text" autocomplete="name" required />
+                </div>
+                <div>
+                  <label for="email">E-mail</label>
+                  <input id="email" name="email" type="email" autocomplete="email" required />
+                </div>
+              </div>
+              <div>
+                <label for="msg">Wiadomość</label>
+                <textarea id="msg" name="message" required placeholder="Napisz, w czym możemy pomóc."></textarea>
+              </div>
+              <label class="inline">
+                <input type="checkbox" id="consent" required />
+                Wyrażam zgodę na kontakt w sprawie zapytania. <a href="#" aria-label="Polityka prywatności">Polityka prywatności</a>.
+              </label>
+              <button class="btn" type="submit">Wyślij</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======= Footer / Newsletter ======= -->
+  <footer role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <h3 style="margin-bottom:.25rem;font-family:Poppins">Newsletter</h3>
+        <p class="muted" style="margin-top:0">Zniżki i informacje o wydarzeniach prosto na e-mail.</p>
+        <form action="#" method="post" class="row" novalidate>
+          <div>
+            <label class="visually-hidden" for="nl-email">E-mail</label>
+            <input id="nl-email" type="email" placeholder="Twój e-mail" aria-label="E-mail do newslettera" required />
+          </div>
+          <div>
+            <label class="inline" style="color:#cbd5e1">
+              <input type="checkbox" required />
+              Zgadzam się na otrzymywanie wiadomości.
+            </label>
+          </div>
+          <div>
+            <button class="btn" type="submit">Zapisz się</button>
+          </div>
+        </form>
+      </div>
+      <div>
+        <div style="text-align:right">
+          <a class="btn ghost" href="zamki.html">Zamki dmuchane</a>
+          <p class="helper" style="margin-top:.8rem">© <span id="year"></span> Coś Pysznego</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======= Scripts ======= -->
+  <script>
+    (function(){
+      // Current year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Smooth focus after skip link
+      const main = document.getElementById('main');
+      if (location.hash === '#main') main.setAttribute('tabindex','-1');
+
+      // Menu data & filtering
+      const items = [
+        {name:'Lody rzemieślnicze — gałka', cat:'Lody', desc:'Wybrane smaki dnia', price:8},
+        {name:'Puchar lodowy klasyk', cat:'Lody', desc:'3 gałki + bita śmietana + sos', price:24},
+        {name:'Gofr klasyczny', cat:'Gofry', desc:'Cukier puder / bita śmietana', price:14},
+        {name:'Gofr z owocami', cat:'Gofry', desc:'Sezonowe owoce + sos', price:22},
+        {name:'Kawa czarna', cat:'Kawa', desc:'Mała / duża', price:'9 / 11'},
+        {name:'Latte', cat:'Kawa', desc:'Mleko: klasyczne lub roślinne', price:14},
+        {name:'Lemoniada domowa', cat:'Napoje', desc:'Cytryna + mięta', price:12},
+        {name:'Woda', cat:'Napoje', desc:'Gazowana lub niegazowana', price:6}
+      ];
+      const tbody = document.getElementById('menuBody');
+      function render(filter='all'){
+        tbody.innerHTML='';
+        items.filter(x => filter==='all' || x.cat===filter).forEach(x=>{
+          const tr = document.createElement('tr'); tr.className='menu-row'; tr.setAttribute('data-category', x.cat);
+          tr.innerHTML = `<td>${x.name}</td><td>${x.cat}</td><td class="muted">${x.desc}</td><td><strong>${x.price} zł</strong></td>`;
+          tbody.appendChild(tr);
+        });
+      }
+      render();
+
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          buttons.forEach(b=>b.setAttribute('aria-pressed','false'));
+          btn.setAttribute('aria-pressed','true');
+          render(btn.dataset.filter);
+        });
+        btn.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); btn.click(); } });
+      });
+
+      // Opening status
+      const OPEN_FROM = {h:10, m:0}; // 10:00
+      const OPEN_TO   = {h:20, m:0}; // 20:00
+      const openTag = document.getElementById('openTag');
+      const hoursText = document.getElementById('hoursText');
+      hoursText.textContent = 'Godziny: 10:00–20:00';
+      function setOpenClosed(){
+        const now = new Date();
+        const start = new Date(now); start.setHours(OPEN_FROM.h, OPEN_FROM.m, 0, 0);
+        const end = new Date(now);   end.setHours(OPEN_TO.h,   OPEN_TO.m,   0, 0);
+        const open = now >= start && now <= end;
+        openTag.textContent = open ? 'OTWARTE' : 'ZAMKNIĘTE';
+        openTag.className = 'chip ' + (open ? 'open' : 'closed');
+      }
+      setOpenClosed();
+      setInterval(setOpenClosed, 60*1000);
+
+      // Weather (Open-Meteo)
+      const statPrecip = document.getElementById('stat-precip');
+      const statTemp = document.getElementById('stat-temp');
+      const statFeels = document.getElementById('stat-feels');
+      const weatherNote = document.getElementById('weather-note');
+
+      async function loadWeather(){
+        try{
+          const url = 'https://api.open-meteo.com/v1/forecast?latitude=53.33&longitude=14.97&current=temperature_2m,apparent_temperature,precipitation&timezone=auto';
+          const res = await fetch(url, {cache:'no-store'});
+          if(!res.ok) throw new Error('HTTP '+res.status);
+          const data = await res.json();
+          const cur = data.current;
+          const precip = typeof cur.precipitation === 'number' ? cur.precipitation : 0;
+          const isRaining = precip >= 0.1;
+          statPrecip.textContent = 'Pada: ' + (isRaining ? 'tak' : 'nie');
+          statTemp.textContent = 'Temp: ' + (cur.temperature_2m ?? '—') + '°C';
+          statFeels.textContent = 'Odczuwalna: ' + (cur.apparent_temperature ?? '—') + '°C';
+          const t = new Date();
+          weatherNote.textContent = 'Aktualizacja: ' + t.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+        }catch(_){
+          statPrecip.textContent = 'Pogoda: niedostępna';
+          statTemp.textContent = 'Temp: —';
+          statFeels.textContent = 'Odczuwalna: —';
+          weatherNote.textContent = 'Nie udało się pobrać danych. Spróbuj ponownie później.';
+        }
+      }
+      loadWeather();
+      // refresh every 10 minutes
+      setInterval(loadWeather, 10*60*1000);
+    })();
+  </script>
+</body>
+</html>
