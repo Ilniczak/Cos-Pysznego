@@ -104,21 +104,24 @@
     .nav-cta{display:flex; gap:.6rem; align-items:center}
 
     /* Hero */
-    .hero{
-      position:relative; overflow:hidden; background:
-        radial-gradient(1200px 600px at 80% -10%, #86BBD855, transparent 60%),
-        radial-gradient(600px 400px at -10% 10%, #2E8BC020, transparent 60%),
-        linear-gradient(180deg, #ffffff, #ffffff);
-      border-bottom:1px solid #e5e7eb;
-    }
-    .hero-wrap{display:grid; grid-template-columns:1.2fr .8fr; gap:32px; align-items:center; padding:64px 0}
-    .hero .tag{display:inline-block; background:var(--sand); color:#6b7280; padding:.35rem .7rem; border-radius:999px; font-weight:600; font-size:.85rem}
-    .hero-img{
-      width:100%; height:360px; border-radius:var(--radius); background:
-        url('https://placehold.co/800x600/png?text=Jezioro+Miedwie') center/cover no-repeat;
-      box-shadow:var(--shadow); border:1px solid #e5e7eb;
-    }
-    .hero-actions{display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1rem}
+    <section class="hero hero--full" aria-label="Zaproszenie">
+  <div class="hero-bg" role="img" aria-label="Jezioro Miedwie o zachodzie słońca"></div>
+  <div class="container hero-full-wrap">
+    <h1 class="hero-title">Desery z widokiem na Miedwie</h1>
+    <p class="hero-sub">Plaża, amfiteatr i czysta woda tuż obok. Dzieci na dmuchańcach, Ty z kawą.</p>
+    <div class="hero-actions" role="group" aria-label="Przyciski akcji">
+      <a class="btn" href="#menu">Sprawdź menu</a>
+      <a class="btn secondary" href="zamki.html">Wynajmij zamek dmuchany</a>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <a class="scroll-indicator" href="#lokalizacja" aria-label="Przewiń do kolejnej sekcji">
+    <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+</section>
 
     /* Cards grid */
     .grid{display:grid; gap:16px}
@@ -517,5 +520,53 @@
       setInterval(loadWeather, 10*60*1000);
     })();
   </script>
+
+<style>
+  .hero--full{
+    position:relative; min-height:100vh; display:grid; place-items:center;
+    border-bottom:1px solid #e5e7eb; overflow:hidden;
+  }
+  .hero-bg{
+    position:absolute; inset:0;
+    background:
+      linear-gradient(180deg, rgba(15,23,42,.35), rgba(15,23,42,.35)),
+      url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+    /* Podmień URL na swoje zdjęcie jeziora; zachowaj gradient dla kontrastu AA */
+    transform:scale(1.02);
+  }
+  .hero-full-wrap{
+    position:relative; text-align:center; color:#fff; padding:0 16px;
+    max-width: 1000px;
+  }
+  .hero-title{
+    font-family:Poppins, Inter, system-ui;
+    font-size:clamp(2.4rem, 6vw, 4.5rem);
+    line-height:1.05; letter-spacing:.5px; margin:0 0 .6rem;
+    text-shadow:0 2px 18px rgba(0,0,0,.35);
+  }
+  .hero-sub{
+    margin:.2rem auto 1.2rem; max-width:800px;
+    font-size:clamp(1rem, 2.2vw, 1.25rem);
+    color:#e5eef7;
+  }
+  .hero-actions{display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap}
+  .scroll-indicator{
+    position:absolute; left:50%; bottom:22px; transform:translateX(-50%);
+    width:46px; height:46px; border-radius:999px; display:grid; place-items:center;
+    color:#fff; background:rgba(46,139,192,.85); border:2px solid rgba(255,255,255,.85);
+    box-shadow:0 6px 22px rgba(46,139,192,.35);
+    text-decoration:none;
+    animation: bounce 1.8s infinite;
+  }
+  .scroll-indicator:hover{filter:brightness(1.05); transform:translateX(-50%) translateY(-1px)}
+  .scroll-indicator:focus-visible{outline:none; box-shadow:0 0 0 4px rgba(242,92,84,.45)}
+  @keyframes bounce{
+    0%,20%,50%,80%,100%{ transform:translateX(-50%) translateY(0) }
+    40%{ transform:translateX(-50%) translateY(-8px) }
+    60%{ transform:translateX(-50%) translateY(-4px) }
+  }
+  /* Drobna poprawka navbaru na tle zdjęcia */
+  header{ background:rgba(255,255,255,.85); backdrop-filter:saturate(180%) blur(10px); }
+  
 </body>
 </html>
